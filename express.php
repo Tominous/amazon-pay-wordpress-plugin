@@ -19,9 +19,11 @@ DEFINE("DEMOLP_CATEGORYLIST", "");
 
 
 include(dirname(__FILE__) . '/settings.php');
+include(dirname(__FILE__) . '/editor.php');
 
-add_shortcode("demo-pay", "demopay_handler");
-function demopay_handler($args) {
+
+add_shortcode("express-pay", "express_pay_handler");
+function express_pay_handler($args) {
     $sellerId =  get_option('amzn_seller_id');
     $lwaClientId =  get_option('amzn_lwa_client_id');
     $accessKey =  get_option('amzn_access_key'); 
