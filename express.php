@@ -29,14 +29,16 @@ function express_pay_handler($args) {
     $accessKey =  get_option('amzn_access_key'); 
     $secretKey =  get_option('amzn_secret_key');
     $returnURL = ($args["returnurl"] != '') ? $args["returnurl"] : get_option('amzn_return_url');
+		$note = ($args["note"] != '') ? $args["note"] : "note"; 
+		$amount = ($args["amount"] != '') ? $args["amount"] : "1"; 
 
 	$parameters = array('returnURL'=> $returnURL,
 		'accessKey'=>  $accessKey,
 		'lwaClientId'=> $lwaClientId,
 		'sellerId'=> $sellerId,
-		'sellerNote'=> $args["note"],
+		'sellerNote'=> $note,
 		'currencyCode'=> 'USD',
-		'amount'=> $args["amount"]); 
+		'amount'=> $amount); 
 
    uksort($parameters, 'strcmp');
    $secretKey = $secretKey;	
