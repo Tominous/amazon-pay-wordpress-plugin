@@ -21,6 +21,19 @@ DEFINE("DEMOLP_CATEGORYLIST", "");
 include(dirname(__FILE__) . '/settings.php');
 include(dirname(__FILE__) . '/editor.php');
 
+// shortcode for success page
+add_filter('query_vars', 'add_my_var');
+function add_my_var($public_query_vars) {
+	$public_query_vars[] = 'resultCode';
+	return $public_query_vars;
+}
+
+add_shortcode("success-page", "success_page_handler");
+function success_page_handler($args) {
+    return "resultCode" . get_query_var('resultCode');
+}
+// END shortcode for success page
+
 // adding a page
 $new_page_title = 'success';
 $new_page_content = 'custom content';
