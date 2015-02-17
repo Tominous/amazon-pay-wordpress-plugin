@@ -17,7 +17,6 @@ function amzn_display_settings() {
     $email = (get_option('amzn_email') != '') ? get_option('amzn_email') : 'maximkim@amazon.com';
     $emailNotn = (get_option('amzn_email_notn') == 'enabled') ? 'checked' : '';
 
-		// borrowed from Magento
 		$error = '';
 		$config = array (
 			'ServiceURL' => "https://mws.amazonservices.com/Sellers/2011-07-01",
@@ -66,39 +65,72 @@ function amzn_display_settings() {
 			' . wp_nonce_field('update-options') . '
 			<table class="form-table" width="100%" cellpadding="10">
 			' . $error . '
+			<colgroup>
+			<col span="1" style="width: 15%;">
+			<col span="1" style="width: 85%;">
+			</colgroup>
 			<tbody>
 			<tr>
-			<td scope="row" align="left">
-			 <label>LWA client ID</label><input type="text" style="width:600px;" name="amzn_lwa_client_id" value="' . $lwaClientId . '" /></td>
+				<td>
+					LWA client ID
+				</td>
+				<td>
+				  <input type="text" style="width:600px;" name="amzn_lwa_client_id" value="' . $lwaClientId . '" />
+				</td>
 			</tr>
 			<tr>
-			<td scope="row" align="left">
-			 <label>Seller ID</label><input type="text" name="amzn_seller_id" value="' . $sellerId . '" /></td>
+			  <td scope="row" style="width:600px;" align="left">
+					Seller ID
+				</td>
+			  <td>
+					<input type="text" style="width:600px;" name="amzn_seller_id" value="' . $sellerId . '" />
+				</td>
 			</tr>
 			<tr>
-			<td scope="row" align="left">
-			 <label>MWS access key</label><input type="text" style="width:600px;" name="amzn_access_key" value="' . $accessKey . '" /></td>
+			  <td>
+					MWS access key
+				</td>
+			  <td>
+					<input type="text" style="width:600px;"  name="amzn_access_key" value="' . $accessKey . '" />
+				</td>
 			</tr>
 			<tr>
-			<td scope="row" align="left">
-			 <label>MWS secret key</label><input type="text" style="width:600px;" name="amzn_secret_key" value="' . $secretKey . '" /></td>
+				<td>
+					MWS secret key
+				</td>
+				<td>
+					<input type="text" style="width:600px;" name="amzn_secret_key" value="' . $secretKey . '" />
+				</td>
 			</tr>
 			<tr>
-			<td scope="row" align="left">
-			 <label>Default return URL</label><input type="text" name="amzn_return_url" value="' . $returnURL . '" /></td>
+				<td>
+					Default return URL
+				</td>
+				<td>
+				  <input type="text" style="width:600px;" name="amzn_return_url" value="' . $returnURL . '" />
+				</td>
 			</tr>
 			<tr>
-                          <td scope="row" align="left"><label>Enable email notifications?</label><input type="checkbox" name="amzn_email_notn" value="enabled" ' . $emailNotn . '/></td>
+				<td>
+					Enable email notifications?
+				</td>
+				<td>
+					<input type="checkbox" name="amzn_email_notn" value="enabled" ' . $emailNotn . '/>
+				</td>
 			</tr>
 			<tr>
-			<td scope="row" align="left">
-			 <label>Email address</label><input type="text" name="amzn_email" value="' . $email . '" /></td>
+				<td>
+					Email address
+				</td>
+				<td>
+					<input type="text"  style="width:600px;" name="amzn_email" value="' . $email . '" />
+				</td>
 			</tr>
 			</tbody>
 			</table>
-			 <input type="hidden" name="action" value="update" />
-			 <input type="hidden" name="page_options" value="amzn_seller_id,amzn_lwa_client_id,amzn_access_key,amzn_secret_key,amzn_return_url,amzn_email_notn,amzn_email" />
-			 <input type="submit" name="Submit" value="Update" /></form></div>
+			<input type="hidden" name="action" value="update" />
+			<input type="hidden" name="page_options" value="amzn_seller_id,amzn_lwa_client_id,amzn_access_key,amzn_secret_key,amzn_return_url,amzn_email_notn,amzn_email" />
+			<input type="submit" name="Submit" value="Update" /></form></div>
 			<pre>';
     echo $html;
 }
