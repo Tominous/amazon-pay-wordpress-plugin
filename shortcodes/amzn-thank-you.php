@@ -1,7 +1,7 @@
 <?php
 
 // adding a page
-$new_page_title = 'amzn-thank-you';
+$new_page_title = 'Purchase Confirmation';
 $new_page_content = '[amzn-thank-you]';
 $new_page_template = ''; 
 //ex. template-custom.php. Leave blank if you don't want a custom page template.
@@ -27,13 +27,17 @@ function thank_you_page_handler($args) {
 	$resultCode = get_query_var('resultCode');
 	$amount = get_query_var('amount');
 	if($resultCode == 'Success'){
-	  $message = "You were paid " . $amount . " dollars";
-	  wp_mail('maximkim@amazon.com', 'Payment on your wordpress website', 'The message' );
-	  return "Thank you"; 
+          if (get_option('amzn_email_notn') == 'enabled')
+	  {
+    	    $email = get_option('amzn_email');
+	    $message = "You were paid " . $amount . " dollars";
+	    wp_mail($email, 'Payment on your wordpress website', $message );
+          }
+	  return "Thank you for your purchase."; 
 	}
 	else
 	{
-	  return "Sorry"; 
+	  return "Sorry. Something went wrong."; 
 	}
 }
 ?>
