@@ -62,9 +62,10 @@ function amzn_display_settings() {
     $html = '</pre>
 			<div class="wrap"><form action="options.php" method="post" name="options">
 			<h2>Select Your Settings</h2>
+			<div><a href="http://payments.amazon.com">Do not have an account? Register here.</a></div>
 			' . wp_nonce_field('update-options') . '
 			<table class="form-table" width="100%" cellpadding="10">
-			' . $error . '
+			<h3>' . $error . '</h3>
 			<colgroup>
 			<col span="1" style="width: 15%;">
 			<col span="1" style="width: 85%;">
