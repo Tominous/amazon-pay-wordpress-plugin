@@ -14,6 +14,7 @@ function express_pay_handler($args) {
 		'lwaClientId'=> $lwaClientId,
 		//'platformId'=> 'A3D68VL23XMOV2',
 		'sellerId'=> $sellerId,
+		'paymentAction'=> 'AuthorizeAndCapture',
 		'sellerNote'=> $note,
 		'currencyCode'=> 'USD',
 		'amount'=> $amount); 
