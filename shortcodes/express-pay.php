@@ -12,6 +12,7 @@ function express_pay_handler($args) {
 	$parameters = array('returnURL'=> $returnURL,
 		'accessKey'=>  $accessKey,
 		'lwaClientId'=> $lwaClientId,
+		//'platformId'=> 'A3D68VL23XMOV2',
 		'sellerId'=> $sellerId,
 		'sellerNote'=> $note,
 		'currencyCode'=> 'USD',

@@ -1,4 +1,8 @@
 <?php
+include(dirname(__FILE__) . '/MarketplaceWebServiceSellers/KeycheckClient.php');
+include(dirname(__FILE__) . '/MarketplaceWebServiceSellers/Model/ListMarketplaceParticipationsRequest.php');
+  
+
 add_action('admin_menu', 'amzn_plugin_settings');
 function amzn_plugin_settings() {
     add_menu_page('Amazon Settings', 'Amazon Settings', 'administrator', 'amzn_settings', 'amzn_display_settings');
@@ -12,11 +16,56 @@ function amzn_display_settings() {
     $returnURL = (get_option('amzn_return_url') != '') ? get_option('amzn_return_url') : 'https://54.201.197.139';
     $email = (get_option('amzn_email') != '') ? get_option('amzn_email') : 'maximkim@amazon.com';
     $emailNotn = (get_option('amzn_email_notn') == 'enabled') ? 'checked' : '';
+
+		// borrowed from Magento
+		$error = '';
+		$config = array (
+			'ServiceURL' => "https://mws.amazonservices.com/Sellers/2011-07-01",
+			'ProxyHost' => null,
+			'ProxyPort' => -1,
+			'ProxyUsername' => null,
+			'ProxyPassword' => null,
+			'MaxErrorRetry' => 3,
+		);
+
+		$service = new MarketplaceWebServiceSellers_Client(
+			$accessKey,
+			$secretKey,
+			'Login and Pay for Magento',
+			'1.3',
+			$config);
+
+		$request = new MarketplaceWebServiceSellers_Model_ListMarketplaceParticipationsRequest();
+		$request->setSellerId($sellerId);
+		try {
+			$service->ListMarketplaceParticipations($request);
+			$error = '<font color="green">All of your Amazon API keys are correct!</font>';
+		}
+		catch (MarketplaceWebServiceSellers_Exception $ex) {
+			if ($ex->getErrorCode() == 'InvalidAccessKeyId'){
+				$error = '<font color="red">The MWS Access Key is incorrect</font>';
+			}
+			else if ($ex->getErrorCode() == 'SignatureDoesNotMatch'){
+				$error='<font color="red">The MWS Secret Key is incorrect</font>';
+			}
+			else if ($ex->getErrorCode() == 'InvalidParameterValue'){
+				$error='<font color="red">The Seller/Merchant ID is incorrect</font>';
+			}
+			else if ($ex->getErrorCode() == 'AccessDenied') {
+				$error = '<font color="red">The Seller/Merchant ID does not match the MWS keys provided</font>';
+			}
+			else{
+				$error = '<font color="red">Unknown error</font>';
+			}
+		}
+
+
     $html = '</pre>
 			<div class="wrap"><form action="options.php" method="post" name="options">
 			<h2>Select Your Settings</h2>
 			' . wp_nonce_field('update-options') . '
 			<table class="form-table" width="100%" cellpadding="10">
+			' . $error . '
 			<tbody>
 			<tr>
 			<td scope="row" align="left">
