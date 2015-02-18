@@ -1,7 +1,7 @@
 <?php
 
 function get_button_options(){
-	$sbscb_btn = "[express-pay amount=42]";
+	$sbscb_btn = '[express-pay note="purchase on ' . get_home_url() . '" amount=1 ]';
 	$stscb_btn_img = plugins_url( 'image.png', __FILE__ ) ;
 	echo '<script type="text/javascript">'."\n";
 	echo "var sc_text = '". $sbscb_btn ."'\n";
