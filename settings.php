@@ -5,7 +5,7 @@ include(dirname(__FILE__) . '/MarketplaceWebServiceSellers/Model/ListMarketplace
 
 add_action('admin_menu', 'amzn_plugin_settings');
 function amzn_plugin_settings() {
-    add_menu_page('Amazon Settings', 'Amazon Settings', 'administrator', 'amzn_settings', 'amzn_display_settings');
+    add_menu_page('Pay with Amazon Express', 'Pay with Amazon Express', 'administrator', 'amzn_settings', 'amzn_display_settings');
 }
 
 function amzn_display_settings() {
@@ -13,7 +13,6 @@ function amzn_display_settings() {
     $lwaClientId = (get_option('amzn_lwa_client_id') != '') ? get_option('amzn_lwa_client_id') : 'amzn1.application-oa2-client.d18b994319bc4c1aa4c79e35995fc2cb';
     $accessKey = (get_option('amzn_access_key') != '') ? get_option('amzn_access_key') : 'AKIAIXYYATQC6HR75ZWA';
     $secretKey = (get_option('amzn_secret_key') != '') ? get_option('amzn_secret_key') : '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';
-    $returnURL = (get_option('amzn_return_url') != '') ? get_option('amzn_return_url') : 'https://54.201.197.139';
     $email = (get_option('amzn_email') != '') ? get_option('amzn_email') : 'maximkim@amazon.com';
     $emailNotn = (get_option('amzn_email_notn') == 'enabled') ? 'checked' : '';
 
@@ -59,10 +58,16 @@ function amzn_display_settings() {
 		}
 
 
+		$adminpage = get_page_by_path('/amzn-thank-you');
+		$editorImg = plugins_url( 'images/editor.png', __FILE__ ) ;
+
     $html = '</pre>
 			<div class="wrap"><form action="options.php" method="post" name="options">
 			<h2>Select Your Settings</h2>
-			<div><a href="http://payments.amazon.com">Do not have an account? Register here.</a></div>
+			<div>1) Set up your account keys <a target="_blank" href="https://sellercentral.amazon.com/hz/me/sp/signup?solutionProviderReturnURL=https%3A%2F%2Fgithub.com%2Famzn%2Fpay-with-amazon-express-wordpress-plugin&solutionProviderOptions=mws-dacc%3B&marketplaceId=AGWSWK15IEJJ7&solutionProviderToken=AAAAAQAAAAEAAAAQs8VBhzxXzxdQD9RbpbFvugAAAJAuUdIs4pHFoevcXCHluPMM06WZkDvLwAhULdbXpDy2KE3yNsz%2Fs%2Fo8P4MtF4%2FwL8%2Be%2FOe%2FiNNkUS7VWZ%2BgErn3niMaucl9neOLNIPIMWKcZYJoT9JiE9A0e7qhl2yVYF7ESDjRGcHEGW7oOsZlaSERafivNOleDQhlC9xGS5wBXGLibkya9hgfbbpAuGyLp84%3D&solutionProviderId=A3D68VL23XMOV2">here.</a></div>
+			<div>2) Add the button to any page by clicking the Amazon logo in the visual page editor.</div>
+			<div><img src="' . $editorImg . '"></div>
+			<div>3) Modify the Thank You page customers see when they complete checkout <a href="/wp-admin/post.php?post=' . $adminpage->ID . '&action=edit">here.</a></div>
 			' . wp_nonce_field('update-options') . '
 			<table class="form-table" width="100%" cellpadding="10">
 			<h3>' . $error . '</h3>
@@ -101,14 +106,6 @@ function amzn_display_settings() {
 				</td>
 				<td>
 					<input type="text" style="width:600px;" name="amzn_secret_key" value="' . $secretKey . '" />
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Default return URL
-				</td>
-				<td>
-				  <input type="text" style="width:600px;" name="amzn_return_url" value="' . $returnURL . '" />
 				</td>
 			</tr>
 			<tr>

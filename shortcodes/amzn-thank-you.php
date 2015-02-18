@@ -6,7 +6,7 @@ $new_page_content = '[amzn-thank-you]';
 $new_page_template = ''; 
 //ex. template-custom.php. Leave blank if you don't want a custom page template.
 
-$page_check = get_page_by_title($new_page_title);
+$page_check = get_page_by_path('/amzn-thank-you');
 $new_page = array(
 	'post_type' => 'page',
 	'post_title' => $new_page_title,
