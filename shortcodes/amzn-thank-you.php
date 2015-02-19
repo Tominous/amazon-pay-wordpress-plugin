@@ -22,6 +22,10 @@ if(!isset($page_check->ID)){
 	}
 }
 
+function set_html_content_type() {
+		return 'text/html';
+}
+
 add_shortcode("amzn-thank-you", "thank_you_page_handler");
 function thank_you_page_handler($args) {
 	$resultCode = get_query_var('resultCode');
@@ -30,8 +34,11 @@ function thank_you_page_handler($args) {
 		if (get_option('amzn_email_notn') == 'enabled')
 		{
 			$email = get_option('amzn_email');
-			$message = "You were paid " . $amount . " dollars";
-			wp_mail($email, 'Payment on your wordpress website', $message );
+			$message = "A payment was completed on " . get_home_url() . " at " . current_time('mysql') . " using Pay with Amazon. Please login to <a href='https://sellercentral.amazon.com/'>Seller Central</a> in order to see the payment details including the buyer's email and address information.";
+			//$headers = array('Content-Type: text/html; charset=UTF-8');
+			add_filter( 'wp_mail_content_type', 'set_html_content_type' );
+			wp_mail($email, 'Payment Completed Notification', $message );
+			remove_filter( 'wp_mail_content_type', 'set_html_content_type' );
 		}
 		return "Thank you for your purchase."; 
 	}
