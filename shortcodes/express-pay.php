@@ -31,11 +31,11 @@ function express_pay_handler($args) {
 	$secretKey = $secretKey;	
 	$signature = _urlencode(_signParameters($parameters, $secretKey));
 	$parameters['signature'] = $signature;
-
+  $buttonId = uniqid();
 	$button = "<script type='text/javascript' src='https://static-na.payments-amazon.com/OffAmazonPayments/us/sandbox/js/Widgets.js'></script>
-		<div id='AmazonPayButton'></div>
+		<div id='AmazonPayButton" . $buttonId . "'></div>
 		<script type='text/javascript'>
-			OffAmazonPayments.Button('AmazonPayButton', 'A1GV76EFH0T2Y7', {
+			OffAmazonPayments.Button('AmazonPayButton" . $buttonId . "', 'A1GV76EFH0T2Y7', {
 				type: 'hostedPayment',
 				hostedParametersProvider: function(done) {
 					data =" . json_encode($parameters) . "; 
