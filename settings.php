@@ -1,4 +1,13 @@
 <?php
+/**
+ * Pay with Amazon
+ *
+ * @category Amazon
+ * @package Amazon_Login
+ * @copyright Copyright (c) 2015 Amazon.com
+ * @license http://opensource.org/licenses/Apache-2.0 Apache License, Version 2.0
+ */
+
 include(dirname(__FILE__) . '/MarketplaceWebServiceSellers/KeycheckClient.php');
 include(dirname(__FILE__) . '/MarketplaceWebServiceSellers/Model/ListMarketplaceParticipationsRequest.php');
   
