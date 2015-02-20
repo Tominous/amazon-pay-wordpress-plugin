@@ -46,7 +46,12 @@ function amzn_display_settings() {
 		$request->setSellerId($sellerId);
 		try {
 			$service->ListMarketplaceParticipations($request);
-			$error = '<font color="green">All of your Amazon API keys are correct!</font>';
+			if(strpos($lwaClientId, "amzn1.application")!==false && strpos($lwaClientId, "client")===false) {
+				$error = '<font color="red">It seems like you used your LWA App ID instead of LWA Client ID.</font>';
+			}
+			else {
+				$error = '<font color="green">All of your Amazon API keys are correct!</font>';
+			}
 		}
 		catch (MarketplaceWebServiceSellers_Exception $ex) {
 			if ($ex->getErrorCode() == 'InvalidAccessKeyId'){
