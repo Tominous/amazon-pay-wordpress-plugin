@@ -18,11 +18,11 @@ function amzn_plugin_settings() {
 }
 
 function amzn_display_settings() {
-    $sellerId = (get_option('amzn_seller_id') != '') ? get_option('amzn_seller_id') : 'A1GV76EFH0T2Y7';
-    $lwaClientId = (get_option('amzn_lwa_client_id') != '') ? get_option('amzn_lwa_client_id') : 'amzn1.application-oa2-client.d18b994319bc4c1aa4c79e35995fc2cb';
-    $accessKey = (get_option('amzn_access_key') != '') ? get_option('amzn_access_key') : 'AKIAIXYYATQC6HR75ZWA';
-    $secretKey = (get_option('amzn_secret_key') != '') ? get_option('amzn_secret_key') : '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';
-    $email = (get_option('amzn_email') != '') ? get_option('amzn_email') : 'maximkim@amazon.com';
+    $sellerId = get_option('amzn_seller_id'); 
+    $lwaClientId = get_option('amzn_lwa_client_id');
+    $accessKey = get_option('amzn_access_key');
+    $secretKey = get_option('amzn_secret_key');
+    $email = get_option('amzn_email');
     $emailNotn = (get_option('amzn_email_notn') == 'enabled') ? 'checked' : '';
 
 		$error = '';
@@ -38,7 +38,7 @@ function amzn_display_settings() {
 		$service = new MarketplaceWebServiceSellers_Client(
 			$accessKey,
 			$secretKey,
-			'Login and Pay for Magento',
+			'Login and Pay for Wordpress',
 			'1.3',
 			$config);
 
