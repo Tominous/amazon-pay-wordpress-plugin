@@ -78,7 +78,7 @@ function amzn_display_settings() {
     $html = '</pre>
 			<div class="wrap"><form action="options.php" method="post" name="options">
 			<h2>Select Your Settings</h2>
-			<div>1) Set up your account keys <a target="_blank" href="https://sellercentral.amazon.com/hz/me/sp/signup?solutionProviderReturnURL=https%3A%2F%2Fgithub.com%2Famzn%2Fpay-with-amazon-express-wordpress-plugin&solutionProviderOptions=mws-dacc%3B&marketplaceId=AGWSWK15IEJJ7&solutionProviderToken=AAAAAQAAAAEAAAAQs8VBhzxXzxdQD9RbpbFvugAAAJAuUdIs4pHFoevcXCHluPMM06WZkDvLwAhULdbXpDy2KE3yNsz%2Fs%2Fo8P4MtF4%2FwL8%2Be%2FOe%2FiNNkUS7VWZ%2BgErn3niMaucl9neOLNIPIMWKcZYJoT9JiE9A0e7qhl2yVYF7ESDjRGcHEGW7oOsZlaSERafivNOleDQhlC9xGS5wBXGLibkya9hgfbbpAuGyLp84%3D&solutionProviderId=A3D68VL23XMOV2">here.</a></div>
+			<div>1) Set up your account keys <a target="_blank" href="https://sellercentral.amazon.com/hz/me/sp/signup?solutionProviderOptions=mws-acc%3B&marketplaceId=AGWSWK15IEJJ7&solutionProviderToken=AAAAAQAAAAEAAAAQGS1Ms68iI1xi%2BAIyp6LKLgAAAHDRM2jOjjob2BkYJF4ngXTluALfNa7zANQglj%2BMlI9LICuWe2xCJFG4d1E41cnSaiJ2nyGfsAMozRngEFnbZxsH%2BZw8QJogbypjkgZaD5gVlxps4cvKZu0EmDAqhyj%2F7JftDtOwEDmoT3qiqu0f1Yhq&solutionProviderId=A3D68VL23XMOV2">here.</a></div>
 			<div>2) Add the button to any page by clicking the Amazon logo in the visual page editor.</div>
 			<div><img src="' . $editorImg . '"></div>
 			<div>3) Modify the Thank You page customers see when they complete checkout <a href="/wp-admin/post.php?post=' . $adminpage->ID . '&action=edit">here.</a></div>
