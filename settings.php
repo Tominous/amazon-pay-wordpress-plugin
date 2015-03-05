@@ -91,14 +91,6 @@ function amzn_display_settings() {
 			</colgroup>
 			<tbody>
 			<tr>
-				<td>
-					LWA client ID
-				</td>
-				<td>
-				  <input type="text" style="width:600px;" name="amzn_lwa_client_id" value="' . $lwaClientId . '" />
-				</td>
-			</tr>
-			<tr>
 			  <td scope="row" style="width:600px;" align="left">
 					Seller ID
 				</td>
@@ -120,6 +112,14 @@ function amzn_display_settings() {
 				</td>
 				<td>
 					<input type="text" style="width:600px;" name="amzn_secret_key" value="' . $secretKey . '" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					LWA client ID
+				</td>
+				<td>
+				  <input type="text" style="width:600px;" name="amzn_lwa_client_id" value="' . $lwaClientId . '" />
 				</td>
 			</tr>
 			<tr>
