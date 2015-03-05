@@ -18,11 +18,11 @@ function amzn_plugin_settings() {
 }
 
 function amzn_display_settings() {
-    $sellerId = get_option('amzn_seller_id'); 
-    $lwaClientId = get_option('amzn_lwa_client_id');
-    $accessKey = get_option('amzn_access_key');
-    $secretKey = get_option('amzn_secret_key');
-    $email = get_option('amzn_email');
+    $sellerId = get_option('amzn_seller_id', '');
+    $lwaClientId = get_option('amzn_lwa_client_id', '');
+    $accessKey = get_option('amzn_access_key', '');
+    $secretKey = get_option('amzn_secret_key', '');
+    $email = get_option('amzn_email', '');
     $emailNotn = (get_option('amzn_email_notn') == 'enabled') ? 'checked' : '';
 
 		$error = '';
