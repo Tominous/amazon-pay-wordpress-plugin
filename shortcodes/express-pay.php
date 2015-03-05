@@ -32,7 +32,7 @@ function express_pay_handler($args) {
 	$signature = _urlencode(_signParameters($parameters, $secretKey));
 	$parameters['signature'] = $signature;
   $buttonId = uniqid();
-	$button = "<script type='text/javascript' src='https://static-na.payments-amazon.com/OffAmazonPayments/us/sandbox/js/Widgets.js'></script>
+	$button = "<script type='text/javascript' src='https://static-na.payments-amazon.com/OffAmazonPayments/us/js/Widgets.js'></script>
 		<div id='AmazonPayButton" . $buttonId . "'></div>
 		<script type='text/javascript'>
 			OffAmazonPayments.Button('AmazonPayButton" . $buttonId . "', 'A1GV76EFH0T2Y7', {
