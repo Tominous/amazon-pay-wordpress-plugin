@@ -1,5 +1,5 @@
 === Pay with Amazon Express Checkout ===
-Contributors: payments-cp-devel-wp-plugin
+Contributors: payments-cp-devel-wp
 Tags: amazon, payments, express
 Requires at least: 3.0.1
 Tested up to: 4.1.1
@@ -16,7 +16,7 @@ A simple WordPress extension that lets you add a Pay with Amazon button to your 
 
 == Installation ==
 
-Download the plugin as a zip file [here](https://github.com/amzn/pay-with-amazon-express-wordpress-plugin/archive/master.zip). 
+Download the plugin as a zip file [here](https://github.com/amzn/pay-with-amazon-express-wordpress/archive/master.zip). 
 
 In your WordPress admin console, upload and activate the plugin under: Plugins -> Add New -> Upload 
 
