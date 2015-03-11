@@ -1,4 +1,4 @@
-Pay with Amazon Express for Wordpress
+Pay with Amazon Express Button for Wordpress
 ==============================================
 
 A simple WordPress extension that lets you add a Pay with Amazon button to your site.
