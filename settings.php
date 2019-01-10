@@ -78,7 +78,7 @@ function amzn_display_settings() {
     $html = '</pre>
 			<div class="wrap"><form action="options.php" method="post" name="options">
 			<h2>Select Your Settings</h2>
-			<div>1) Set up your account keys <a target="_blank" href="https://sellercentral.amazon.com/hz/me/sp/signup?solutionProviderOptions=lwa%3Bmws-acc%3B&marketplaceId=AGWSWK15IEJJ7&solutionProviderToken=AAAAAQAAAAEAAAAQfpDKmD23VHUqpxUzH0HW%2FAAAAHCQ0U6VJYwOBHfIn0L1TqmSibRl4%2BW4SbPymnIF7NhCXOgIw3%2BgSRNLcFmRX%2FyuTRChUnU8F4AuKoacZG2wKPaqYSSD7WmQz%2FMUDXxnXZTE%2Fr2w1GH3EYl7DC7nkD3b4l2ot7X1%2BXsHsrFDg6%2FWTIb8&solutionProviderId=A3D68VL23XMOV2">here.</a></div>
+			<div>1) Set up your account keys <a target="_blank" href="https://payments.amazon.com/register?source=SPPL&spId=A3D68VL23XMOV2">here.</a></div>
 			<div>2) Add the button to any page by clicking the Amazon logo in the visual page editor.</div>
 			<div><img src="' . $editorImg . '"></div>
 			<div>3) Modify the Thank You page customers see when they complete checkout <a href="post.php?post=' . $adminpage->ID . '&action=edit">here.</a></div>
