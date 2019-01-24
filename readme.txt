@@ -25,7 +25,7 @@ In your WordPress admin console, upload and activate the plugin under: Plugins -
 
 Once installed, click on Pay With Amazon Express item on the left nav of the admin page. 
 
-Set up your Pay with Amazon account keys and save the changes.  You can register [here](https://sellercentral.amazon.com/hz/me/sp/signup?solutionProviderOptions=lwa%3Bmws-acc%3B&marketplaceId=AGWSWK15IEJJ7&solutionProviderToken=AAAAAQAAAAEAAAAQfpDKmD23VHUqpxUzH0HW%2FAAAAHCQ0U6VJYwOBHfIn0L1TqmSibRl4%2BW4SbPymnIF7NhCXOgIw3%2BgSRNLcFmRX%2FyuTRChUnU8F4AuKoacZG2wKPaqYSSD7WmQz%2FMUDXxnXZTE%2Fr2w1GH3EYl7DC7nkD3b4l2ot7X1%2BXsHsrFDg6%2FWTIb8&solutionProviderId=A3D68VL23XMOV2) if you don't have a merchant account.
+Set up your Pay with Amazon account keys and save the changes.  You can register [here](https://payments.amazon.com/register?source=SPPD&ld=APUSWORDPRESS&spId=A3D68VL23XMOV2&locale=US) if you don't have a merchant account.
 
 The plugin will send you email notifications to the email you designate whenever a payment is completed.  Uncheck "Email Notifications" if you don't want to receive these.
 
