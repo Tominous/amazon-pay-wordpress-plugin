@@ -14,13 +14,13 @@ function express_pay_handler($args) {
 	$lwaClientId =  get_option('amzn_lwa_client_id');
 	$accessKey =  get_option('amzn_access_key'); 
 	$secretKey =  get_option('amzn_secret_key');
+	$sandbox =  get_option('amzn_sandbox');
 	$note = ($args["note"] != '') ? $args["note"] : "purchase on " . get_home_url(); 
 	$amount = ($args["amount"] != '') ? $args["amount"] : "1"; 
 
 	$parameters = array('returnURL'=> get_home_url() . '/amzn-thank-you',
 		'accessKey'=>  $accessKey,
 		'lwaClientId'=> $lwaClientId,
-		//'platformId'=> 'A3D68VL23XMOV2',
 		'sellerId'=> $sellerId,
 		'paymentAction'=> 'AuthorizeAndCapture',
 		'sellerNote'=> $note,
@@ -31,11 +31,12 @@ function express_pay_handler($args) {
 	$secretKey = $secretKey;	
 	$signature = _urlencode(_signParameters($parameters, $secretKey));
 	$parameters['signature'] = $signature;
-  $buttonId = uniqid();
-	$button = "<script type='text/javascript' src='https://static-na.payments-amazon.com/OffAmazonPayments/us/js/Widgets.js'></script>
+        $buttonId = uniqid();
+        $widgetsUrl = $sandbox ? 'https://static-na.payments-amazon.com/OffAmazonPayments/us/sandbox/js/Widgets.js' : 'https://static-na.payments-amazon.com/OffAmazonPayments/us/js/Widgets.js';
+	$button = "<script type='text/javascript' src='{$widgetsUrl}'></script>
 		<div id='AmazonPayButton" . $buttonId . "'></div>
 		<script type='text/javascript'>
-			OffAmazonPayments.Button('AmazonPayButton" . $buttonId . "', 'A1GV76EFH0T2Y7', {
+			OffAmazonPayments.Button('AmazonPayButton" . $buttonId . "', '{$sellerId}', {
 				type: 'hostedPayment',
 				hostedParametersProvider: function(done) {
 					data =" . json_encode($parameters) . "; 

@@ -24,6 +24,7 @@ function amzn_display_settings() {
     $secretKey = get_option('amzn_secret_key', '');
     $email = get_option('amzn_email', '');
     $emailNotn = (get_option('amzn_email_notn') == 'enabled') ? 'checked' : '';
+    $sandbox = (get_option('amzn_sandbox') == 'enabled') ? 'checked' : '';
 
 		$error = '';
 		$config = array (
@@ -92,6 +93,14 @@ function amzn_display_settings() {
 			<tbody>
 			<tr>
 			  <td scope="row" style="width:600px;" align="left">
+					Sandbox?
+				</td>
+			  <td>
+					<input type="checkbox" name="amzn_sandbox" value="enabled" ' . $sandbox . '/>
+				</td>
+			</tr>
+			<tr>
+			  <td scope="row" style="width:600px;" align="left">
 					Seller ID
 				</td>
 			  <td>
@@ -141,7 +150,7 @@ function amzn_display_settings() {
 			</tbody>
 			</table>
 			<input type="hidden" name="action" value="update" />
-			<input type="hidden" name="page_options" value="amzn_seller_id,amzn_lwa_client_id,amzn_access_key,amzn_secret_key,amzn_return_url,amzn_email_notn,amzn_email" />
+			<input type="hidden" name="page_options" value="amzn_seller_id,amzn_lwa_client_id,amzn_access_key,amzn_secret_key,amzn_return_url,amzn_email_notn,amzn_email,amzn_sandbox" />
 			<input type="submit" name="Submit" value="Update" /></form></div>
 			<pre>';
     echo $html;
