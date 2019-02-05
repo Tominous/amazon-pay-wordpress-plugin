@@ -6,7 +6,7 @@ A simple WordPress extension that lets you add an Amazon Pay Express Checkout bu
 Installation
 ------------
 
-Download the plugin as a zip file [here](https://github.com/amzn/pay-with-amazon-express-wordpress-plugin/releases). 
+Download the plugin as a zip file [here](https://github.com/amzn/amazon-pay-wordpress-plugin/releases). 
 
 In your WordPress admin console, upload and activate the plugin under: Plugins -> Add New -> Upload 
 
@@ -21,4 +21,4 @@ The plugin will send email notifications when a payment is completed. Uncheck "E
 
 To place the button in one of your posts, edit the page in WordPress admin and use the handy Amazon Pay Express Checkout button shortcode in the Visual Editor toolbar.
 
-![Page Editor Screenshot](https://raw.githubusercontent.com/amzn/pay-with-amazon-express-wordpress-plugin/master/images/editor.png?token=ACKUDdk9HtTKQhPThlkdAepRX9yM-vlHks5VAhVdwA%3D%3D)
+![Page Editor Screenshot](https://raw.githubusercontent.com/amzn/amazon-pay-wordpress-plugin/master/images/editor.png?token=ACKUDdk9HtTKQhPThlkdAepRX9yM-vlHks5VAhVdwA%3D%3D)

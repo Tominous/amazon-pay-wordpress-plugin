@@ -1,6 +1,6 @@
 <?php
 /**
- * Pay with Amazon
+ * Amazon Pay
  *
  * @category Amazon
  * @package Amazon_Login
