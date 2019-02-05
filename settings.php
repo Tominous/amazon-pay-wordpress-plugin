@@ -1,6 +1,6 @@
 <?php
 /**
- * Pay with Amazon
+ * Amazon Pay
  *
  * @category Amazon
  * @package Amazon_Login
@@ -14,7 +14,7 @@ include(dirname(__FILE__) . '/MarketplaceWebServiceSellers/Model/ListMarketplace
 
 add_action('admin_menu', 'amzn_plugin_settings');
 function amzn_plugin_settings() {
-    add_menu_page('Pay with Amazon Express', 'Pay with Amazon Express', 'administrator', 'amzn_settings', 'amzn_display_settings');
+    add_menu_page('Amazon Pay Express Checkout', 'Amazon Pay', 'administrator', 'amzn_settings', 'amzn_display_settings', plugins_url('assets/icon.svg', __FILE__));
 }
 
 function amzn_display_settings() {
@@ -78,11 +78,27 @@ function amzn_display_settings() {
 
     $html = '</pre>
 			<div class="wrap"><form action="options.php" method="post" name="options">
-			<h2>Select Your Settings</h2>
-			<div>1) Set up your account keys <a target="_blank" href="https://payments.amazon.com/register?source=SPPL&spId=A3D68VL23XMOV2">here.</a></div>
-			<div>2) Add the button to any page by clicking the Amazon logo in the visual page editor.</div>
-			<div><img src="' . $editorImg . '"></div>
-			<div>3) Modify the Thank You page customers see when they complete checkout <a href="post.php?post=' . $adminpage->ID . '&action=edit">here.</a></div>
+			<h2>Amazon Pay Express Checkout Settings</h2>
+
+			<ol>
+				<li>
+					Set up your account keys <a target="_blank" href="https://payments.amazon.com/register?source=SPPL&spId=A3D68VL23XMOV2">here.</a>
+				</li>
+				<li>
+					Enter your account keys in the corresponding text fields below.
+				</li>
+				<li>
+					Add the Amazon Pay Express Checkout button to any page by clicking the Amazon logo in the visual page editor.
+					<br /><br />
+					<div>
+						<img src="' . $editorImg . '">
+					</div>
+				</li>
+				<li>
+					Modify the Thank You page customers see when they complete checkout <a href="post.php?post=' . $adminpage->ID . '&action=edit">here.</a>
+				</li>
+			</ol>
+			
 			' . wp_nonce_field('update-options') . '
 			<table class="form-table" width="100%" cellpadding="10">
 			<h3>' . $error . '</h3>

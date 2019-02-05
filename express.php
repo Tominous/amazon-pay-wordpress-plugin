@@ -1,19 +1,19 @@
 <?php
 /*
-Plugin Name: Pay with Amazon Express
+Plugin Name: Amazon Pay Express Checkout
 Plugin URI: https://github.com/amzn/pay-with-amazon-express-wordpress-plugin
-Description:  A simple WordPress extension that lets you add a Pay with Amazon button to your site. Configure your settings <a href="admin.php?page=amzn_settings">here</a>. 
-Version: 0.2 BETA
-Author: Pay with Amazon
+Description:  A simple WordPress extension that lets you add an Amazon Pay Express Checkout button to your site. Configure your settings <a href="admin.php?page=amzn_settings">here</a>. 
+Version: 1.1
+Author: Amazon Pay
 Author URI: http://payments.amazon.com
 */
 
 /*
-Amazon Express Checkout (Wordpress Plugin)
+Amazon Express Checkout (WordPress Plugin)
 */
 
 /**
- * Pay with Amazon
+ * Amazon Pay
  *
  * @category Amazon
  * @package Amazon_Login

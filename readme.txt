@@ -1,4 +1,4 @@
-=== Pay with Amazon Express Checkout ===
+=== Amazon Pay Express Checkout ===
 Contributors: payments-cp-devel-wp
 Tags: amazon, payments, express
 Requires at least: 3.0.1
@@ -8,11 +8,11 @@ License: Apache 2.0
 License URI: http://www.apache.org/licenses/LICENSE-2.0
 
 
-Pay with Amazon Express Checkout for Wordpress
+Amazon Pay Express Checkout for Wordpress
 
 == Description ==
 
-A simple WordPress extension that lets you add a Pay with Amazon button to your site.
+A simple WordPress extension that lets you add an Amazon Pay Express Checkout button to your site.
 
 == Installation ==
 
@@ -23,20 +23,20 @@ In your WordPress admin console, upload and activate the plugin under: Plugins -
 
 == Usage ==
 
-Once installed, click on Pay With Amazon Express item on the left nav of the admin page. 
+Once installed, click on Amazon Pay menu item on the left nav of the admin page. 
 
-Set up your Pay with Amazon account keys and save the changes.  You can register [here](https://payments.amazon.com/register?source=SPPD&ld=APUSWORDPRESS&spId=A3D68VL23XMOV2&locale=US) if you don't have a merchant account.
+Set up your Amazon Pay account keys and save the changes. You can register [here](https://payments.amazon.com/register?source=SPPD&ld=APUSWORDPRESS&spId=A3D68VL23XMOV2&locale=US) if you don't have a merchant account.
 
-The plugin will send you email notifications to the email you designate whenever a payment is completed.  Uncheck "Email Notifications" if you don't want to receive these.
+The plugin will send you email notifications to the email you designate whenever a payment is completed. Uncheck "Email Notifications" if you don't want to receive these.
 
-To place the button in one of your posts, edit the page in WordPress admin and use the handy Pay with Amazon button shortcode in the Visual Editor toolbar.
+To place the button in one of your posts, edit the page in WordPress admin and use the handy Amazon Pay Express Checkout button shortcode in the Visual Editor toolbar.
 
 == Screenshots ==
 
 1. Settings page.
-2. Two Pay with Amazon buttons in a post. 
+2. An Amazon Pay Express Checkout button in a post. 
 
 == Changelog ==
 
-= 1.0 =
-* version 1 beta 
+= 1.1 =
+* version 1.1

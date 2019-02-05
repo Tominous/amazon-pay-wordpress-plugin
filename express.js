@@ -26,11 +26,11 @@ function amznexpressplugin() {
 
 	getInfo : function() {
 		return {
-			longname : 'Pay with Amazon Express TinyMCE Shortcode plugin',
-	author : 'Pay with Amazon',
+			longname : 'Amazon Pay Express Checkout - TinyMCE Shortcode Plugin',
+	author : 'Amazon Pay',
 	authorurl : 'http://payments.amazon.com',
 	infourl : 'http://payments.amazon.com',
-	version : "1.0"
+	version : "1.1"
 		};
 	}
 
