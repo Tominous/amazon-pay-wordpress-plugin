@@ -14,7 +14,7 @@ include(dirname(__FILE__) . '/MarketplaceWebServiceSellers/Model/ListMarketplace
 
 add_action('admin_menu', 'amzn_plugin_settings');
 function amzn_plugin_settings() {
-    add_menu_page('Amazon Pay Express Checkout', 'Amazon Pay', 'administrator', 'amzn_settings', 'amzn_display_settings', plugins_url('assets/icon.svg', __FILE__));
+    add_menu_page('Amazon Pay Express Checkout', 'Amazon Pay', 'administrator', 'amzn_settings', 'amzn_display_settings', plugins_url('assets/menu_icon.svg', __FILE__));
 }
 
 function amzn_display_settings() {
