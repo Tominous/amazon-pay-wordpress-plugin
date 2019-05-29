@@ -3,6 +3,8 @@ Amazon Pay Express Checkout for WordPress
 
 A simple WordPress extension that lets you add an Amazon Pay Express Checkout button to your site.
 
+NOTE: This plugin is only supported for WordPress v4
+
 Installation
 ------------
 
